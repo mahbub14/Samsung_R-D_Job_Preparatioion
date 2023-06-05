@@ -2,24 +2,6 @@
 int N,A[100],Visited[100],Brust[100];
 int Set[100];
 int ans;
-int check(int i)
-{
-    for(int j=0; j<i; j++)
-    {
-        if(Brust[j]==1)
-        {
-            return 1;
-        }
-    }
-    for(int j=i+1; j<N; j++)
-    {
-        if(Brust[j]==1)
-        {
-            return 1;
-        }
-    }
-    return 0;
-}
 void print()
 {
 
@@ -53,7 +35,7 @@ void print()
                     break;
                 }
             }
-            if(left+right==0) tmp=Set[A[i]];
+            if(left==0&&right==0) tmp=Set[A[i]];
             else if(left>0&&right>0) tmp=left*right;
             else if(left>0&&right==0) tmp=left;
             else if(left==0&&right>0) tmp=right;
